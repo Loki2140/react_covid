@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Country } from "../country/Country";
 import "./countryList.css";
-import { useCountry } from "../../hooks/useCountry";
 import { Modal } from "../modal/Modal";
 const API_COUNTRY_COVID = "https://api.covid19api.com/summary";
 
@@ -10,11 +9,8 @@ export function CountryList() {
   useEffect(() => {
     fetch(API_COUNTRY_COVID)
       .then((res) => res.json())
-      .then((data) => setData(data.Countries))
-      .then(console.log("render!"));
+      .then((data) => setData(data.Countries));
   }, []);
-  // const data = useCountry();
-  console.log("render");
   return (
     <table className="flex-table">
       <thead>
