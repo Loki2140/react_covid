@@ -13,19 +13,14 @@ export function Modal({
   recovered
 }) {
   console.log(isOpen, setIsOpen, country, confirmed, deaths, recovered);
-  const closeModal = () => {
+  const closeModal = (e) => {
+    e.stopPropagation();
     setIsOpen(false);
   };
 
   return (
-    <div
-      onClick={closeModal}
-      className={isOpen ? "modalOverlay active" : "modalOverlay"}
-    >
-      <div
-        className={isOpen ? "modalWindow active" : "modalWindow"}
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className={isOpen ? "modalOverlay active" : "modalOverlay"}>
+      <div className={isOpen ? "modalWindow active" : "modalWindow"}>
         <h2>{country}</h2>
         <div>
           <div className="modal_el">
@@ -51,7 +46,7 @@ export function Modal({
             <div>{recovered}</div>
           </div>
         </div>
-        {/* <button onClick={closeModal}>OK</button> */}
+        <button onClick={closeModal}>OK</button>
       </div>
     </div>
   );
