@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Country } from "../country/Country";
+import { useCountry } from "../../hooks/useCountry";
 import "./countryList.css";
-import { Modal } from "../modal/Modal";
 
-const API_COUNTRY_COVID = "https://api.covid19api.com/summary";
-
-export function CountryList() {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch(API_COUNTRY_COVID)
-      .then((res) => res.json())
-      .then((data) => setData(data.Countries));
-  }, []);
-  const searchState = "EL"; // вот єто надо получвть находится в import { Search } from "../search/Search";
+export function CountryList({ searchState }) {
+  const data = useCountry(null);
   return (
     <table className="flex-table">
       <thead>
@@ -27,13 +19,13 @@ export function CountryList() {
           data
             .filter((val) => {
               if (searchState === "") return val;
-              if (val.Country.toLowerCase().includes(searchState.toLowerCase()))
-                return val;
+              return val.Country.toLowerCase().includes(
+                searchState.toLowerCase()
+              );
             })
             .map((country, i) => (
               <Country id={i + 1} key={country.ID} country={country} />
             ))}
-        <Modal />
       </tbody>
     </table>
   );

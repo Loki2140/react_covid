@@ -5,9 +5,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
@@ -19,6 +16,9 @@
 
 .modalWindow {
   background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
@@ -30,6 +30,7 @@
 }
 .modalWindow.active {
   transform: scale(1);
+  transform: translate(-50%, -50%);
 }
 
 .modalWindow h2 {
@@ -78,7 +79,7 @@
   color: #ffffff;
 }
 .modalWindow button:hover {
-  background-color: #2175f3
+  background-color: #2175f3;
 }
 .modalWindow button:active {
   background-color: rgba(156, 141, 241, 0.87);

@@ -12,14 +12,13 @@ export function Modal({
   deaths,
   recovered
 }) {
-  console.log(isOpen, setIsOpen, country, confirmed, deaths, recovered);
   const closeModal = (e) => {
     e.stopPropagation();
     setIsOpen(false);
   };
 
   return (
-    <div className={isOpen ? "modalOverlay active" : "modalOverlay"}>
+    <td className={isOpen ? "modalOverlay active" : "modalOverlay"}>
       <div className={isOpen ? "modalWindow active" : "modalWindow"}>
         <h2>{country}</h2>
         <div>
@@ -48,6 +47,6 @@ export function Modal({
         </div>
         <button onClick={closeModal}>OK</button>
       </div>
-    </div>
+    </td>
   );
 }

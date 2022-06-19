@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./search.css";
 import { SvgMagnifier } from "../SvgMagnifier";
-// import { CountryList } from "../countryList/CountryList";
 
-export function Search({ active, setActive }) {
-  const [searchState, setSearchState] = useState(null);
+export function Search({ setSearchState }) {
   const handleOnChange = (event) => {
     setSearchState(event.target.value);
   };

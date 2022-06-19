@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Search } from "../search/Search";
 import "./header.css";
 import { SvgLogo } from "../SvgLogo";
 
-export function Header() {
+export function Header({ setSearchState }) {
   return (
     <div className="head">
       <div className="logo">
         <SvgLogo />
         <span>STATISTIC</span>
       </div>
-
-      <Search />
+      <Search setSearchState={setSearchState} />
     </div>
   );
 }

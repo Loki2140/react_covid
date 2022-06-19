@@ -13,7 +13,7 @@
 .flex-table thead tr th:not(:last-child) {
   border-right: 1px solid #ffffff;
 }
-.flex-table tbody tr td:not(:last-child) {
+.flex-table tbody tr td:not(:nth-last-child(-n + 2)) {
   border-right: 1px solid #b2b2b2;
 }
 .flex-table thead tr,
