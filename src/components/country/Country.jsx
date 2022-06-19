@@ -1,12 +1,16 @@
 import React from "react";
 import "./country.css";
+import { Modal } from "../modal/Modal";
 
-export function Country(props) {
+export function Country({ id, country }) {
+  const handlerOnClick = () => {
+    Modal.onModalOpen("true");
+  };
   return (
-    <tr>
-      <td>{props.id}</td>
-      <td>{props.Country}</td>
-      <td>{props.TotalConfirmed}</td>
+    <tr onClick={handlerOnClick}>
+      <td>{id}</td>
+      <td>{country.Country}</td>
+      <td>{country.TotalConfirmed}</td>
     </tr>
   );
 }
