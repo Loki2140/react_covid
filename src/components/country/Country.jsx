@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import "./country.css";
-import { Modal } from "../modal/Modal";
 
-export function Country({ id, country }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export const Country = ({ country, setIsModalOpen, setModalData }) => {
   const handlerOnClick = () => {
+    setModalData({
+      country: country.Country,
+      totalConfirmed: country.TotalConfirmed,
+      totalDeaths: country.TotalDeaths,
+      totalRecovered: country.TotalRecovered
+    });
+
     setIsModalOpen(true);
   };
   return (
     <tr onClick={handlerOnClick}>
-      <td>{id}</td>
+      <td>{country.seqNum}</td>
       <td>{country.Country}</td>
       <td>{country.TotalConfirmed}</td>
-      <Modal
-        isOpen={isModalOpen}
-        setIsOpen={setIsModalOpen}
-        country={country.Country}
-        confirmed={country.TotalConfirmed}
-        deaths={country.TotalDeaths}
-        recovered={country.TotalRecovered}
-      />
     </tr>
   );
-}
+};

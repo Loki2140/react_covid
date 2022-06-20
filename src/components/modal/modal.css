@@ -5,9 +5,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0;
   pointer-events: none;
-  transition: 0.5s;
+  animation: animate_fading 0.5s forwards;
+  animation-timing-function: linear;
 }
 .modalOverlay.active {
   opacity: 1;
@@ -25,11 +25,6 @@
   min-width: 600px;
   min-height: 400px;
   padding: 25px;
-  transform: scale(0.5);
-  transition: 0.4s all;
-}
-.modalWindow.active {
-  transform: scale(1);
   transform: translate(-50%, -50%);
 }
 
@@ -69,6 +64,7 @@
   width: 200px;
   height: 60px;
   background: #2196f3;
+  border: none;
   border-radius: 20px;
   margin: 0 auto;
   font-family: "Roboto";
@@ -83,4 +79,21 @@
 }
 .modalWindow button:active {
   background-color: rgba(156, 141, 241, 0.87);
+}
+@keyframes animate_fading {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }

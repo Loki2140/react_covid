@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Search } from "../search/Search";
 import "./header.css";
-import { SvgLogo } from "../SvgLogo";
+import { SvgLogo } from "../../SVG/Logo";
 
 export function Header({ setSearchState }) {
   return (

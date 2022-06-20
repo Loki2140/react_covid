@@ -1,0 +1,10 @@
+.flex-table tbody tr:hover {
+  background-color: rgba(184, 245, 181, 0.87);
+}
+
+.flex-table tbody tr:active {
+  background-color: rgba(156, 141, 241, 0.87);
+}
+.flex-table tbody tr td:not(:last-child) {
+  border-right: 1px solid #b2b2b2;
+}

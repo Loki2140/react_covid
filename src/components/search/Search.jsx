@@ -1,6 +1,6 @@
 import React from "react";
 import "./search.css";
-import { SvgMagnifier } from "../SvgMagnifier";
+import { SvgMagnifier } from "../../SVG/Magnifier";
 
 export function Search({ setSearchState }) {
   const handleOnChange = (event) => {
