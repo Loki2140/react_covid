@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { Country } from "../country/Country";
 import { useCountry } from "../../hooks/useCountry";
 import { Modal } from "../modal/Modal";
